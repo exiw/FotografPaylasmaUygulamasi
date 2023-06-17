@@ -15,6 +15,8 @@
 		CD273EA82A33CE2B003B9DD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD273EA72A33CE2B003B9DD2 /* Assets.xcassets */; };
 		CD273EAB2A33CE2B003B9DD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD273EA92A33CE2B003B9DD2 /* LaunchScreen.storyboard */; };
 		CD273EB32A33D896003B9DD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD273EB22A33D896003B9DD2 /* GoogleService-Info.plist */; };
+		CD65A33A2A3D9AF500AF000F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3392A3D9AF500AF000F /* Post.swift */; };
+		CDD54B9F2A3C070700978D5E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD54B9E2A3C070700978D5E /* FeedCell.swift */; };
 		CDEE65FC2A371E9A00886463 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE65FB2A371E9A00886463 /* FeedViewController.swift */; };
 		CDEE65FE2A371EBC00886463 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE65FD2A371EBC00886463 /* UploadViewController.swift */; };
 		CDEE66002A371EEB00886463 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE65FF2A371EEB00886463 /* SettingsViewController.swift */; };
@@ -33,6 +35,8 @@
 		CD273EAA2A33CE2B003B9DD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD273EAC2A33CE2B003B9DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD273EB22A33D896003B9DD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD65A3392A3D9AF500AF000F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CDD54B9E2A3C070700978D5E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		CDEE65FB2A371E9A00886463 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CDEE65FD2A371EBC00886463 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		CDEE65FF2A371EEB00886463 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -92,13 +96,15 @@
 				CD273EA02A33CE2A003B9DD2 /* SceneDelegate.swift */,
 				CD273EA22A33CE2A003B9DD2 /* ViewController.swift */,
 				CDEE65FB2A371E9A00886463 /* FeedViewController.swift */,
+				CDEE65FD2A371EBC00886463 /* UploadViewController.swift */,
+				CDEE65FF2A371EEB00886463 /* SettingsViewController.swift */,
 				CD273EA42A33CE2A003B9DD2 /* Main.storyboard */,
 				CD273EA72A33CE2B003B9DD2 /* Assets.xcassets */,
 				CD273EA92A33CE2B003B9DD2 /* LaunchScreen.storyboard */,
 				CD273EAC2A33CE2B003B9DD2 /* Info.plist */,
 				CD273EB22A33D896003B9DD2 /* GoogleService-Info.plist */,
-				CDEE65FD2A371EBC00886463 /* UploadViewController.swift */,
-				CDEE65FF2A371EEB00886463 /* SettingsViewController.swift */,
+				CDD54B9E2A3C070700978D5E /* FeedCell.swift */,
+				CD65A3392A3D9AF500AF000F /* Post.swift */,
 			);
 			path = FotografPaylasmaUygulamasi;
 			sourceTree = "<group>";
@@ -219,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD54B9F2A3C070700978D5E /* FeedCell.swift in Sources */,
 				CD273EA32A33CE2A003B9DD2 /* ViewController.swift in Sources */,
 				CDEE65FE2A371EBC00886463 /* UploadViewController.swift in Sources */,
+				CD65A33A2A3D9AF500AF000F /* Post.swift in Sources */,
 				CD273E9F2A33CE2A003B9DD2 /* AppDelegate.swift in Sources */,
 				CDEE65FC2A371E9A00886463 /* FeedViewController.swift in Sources */,
 				CD273EA12A33CE2A003B9DD2 /* SceneDelegate.swift in Sources */,

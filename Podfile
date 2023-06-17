@@ -8,6 +8,8 @@ target 'FotografPaylasmaUygulamasi' do
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseStorage'
+pod 'SDWebImage', '~> 5.0'
+
 
   # Pods for FotografPaylasmaUygulamasi
 

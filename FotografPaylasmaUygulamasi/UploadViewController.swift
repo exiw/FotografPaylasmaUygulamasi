@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
+import FirebaseAuth
 
 class UploadViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -43,21 +45,51 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate, 
         let mediaFolder = storageReference.child("media")
         
         if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
-            let imageReference = mediaFolder.child("image.jpg")
+            
+            let uuid = UUID().uuidString
+            
+            let imageReference = mediaFolder.child("\(uuid).jpg")
             imageReference.putData(data) { (storagemetadata, error) in
                 if error != nil{
-                    print(error?.localizedDescription)
+                    self.hataMesajiGoster(title: "Hata!", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyin!")
                 }else{
                     imageReference.downloadURL { (url, error) in
                         if error == nil{
                             let imageUrl = url?.absoluteString
-                            print(imageUrl)
+                            
+                            if let imageUrl = imageUrl {
+                                let firestoreDatabase = Firestore.firestore()
+                                
+                                let firestorePost = ["gorselurl" : imageUrl,"yorum" : self.yorumTextField.text!, "email" : Auth.auth().currentUser!.email, "tarih" : FieldValue.serverTimestamp()] as [String : Any]
+                                
+                                    firestoreDatabase.collection("Post").addDocument(data: firestorePost) {
+                                    (error) in
+                                    if error != nil{
+                                        self.hataMesajiGoster(title: "Hata", message: error?.localizedDescription ?? "Hata Aldınız, Tekrar Deneyiniz")
+                                    } else{
+                                        self.imageView.image = UIImage(named: "cursor")
+                                        self.yorumTextField.text = ""
+                                        self.tabBarController?.selectedIndex = 0
+                                    }
+                                    
+                                }
+                            }
+                            
+                            
+                            //print(imageUrl)
                         }
                     }
                 }
             }
         }
         
+    }
+    
+    func hataMesajiGoster(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
     
    
